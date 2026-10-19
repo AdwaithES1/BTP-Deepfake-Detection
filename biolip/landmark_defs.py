@@ -1,0 +1,11 @@
+"""MediaPipe mesh indices used by the feature extractor."""
+
+OUTER_UP = [61, 185, 40, 39, 37, 0, 267, 269, 270, 409, 291]
+OUTER_LO = [146, 91, 181, 84, 17, 314, 405, 321, 375]
+INNER_UP = [78, 191, 80, 81, 82, 13, 312, 311, 310, 415, 308]
+INNER_LO = [95, 88, 178, 87, 14, 317, 402, 318, 324]
+JAW = [58, 172, 136, 150, 149, 176, 148, 152, 377, 400, 378, 379, 365, 397, 288]
+MID = [2, 164, 167, 393, 165, 391, 18, 200, 199]
+PERIORAL = OUTER_UP + OUTER_LO + INNER_UP + INNER_LO + JAW + MID
+ANCHORS = [33, 133, 362, 263, 168, 6, 197, 195]
+assert len(PERIORAL) == 64 and len(set(PERIORAL)) == 64

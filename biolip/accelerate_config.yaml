@@ -1,0 +1,27 @@
+# Accelerate configuration for BioLip multi-GPU training
+# Usage:
+#   accelerate launch --config_file biolip/accelerate_config.yaml biolip/train.py
+#
+# Modify num_processes to match the number of GPUs available on your machine.
+# For a single GPU, set num_processes: 1.
+# For CPU-only, set use_cpu: true.
+
+compute_environment: LOCAL_MACHINE
+debug: false
+distributed_type: MULTI_GPU      # MULTI_GPU | NO | FSDP | DEEPSPEED
+downcast_bf16: false
+enable_cpu_affinity: false
+gpu_ids: all                      # "all" or "0,1,2,3" to restrict to specific GPUs
+machine_rank: 0
+main_process_ip: null
+main_process_port: null
+main_training_function: main
+mixed_precision: bf16             # "no" | "fp16" | "bf16"  — use "no" for A100s with bf16
+num_machines: 1
+num_processes: 4                  # Set to your number of GPUs
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false

@@ -1,0 +1,13 @@
+numpy
+pandas
+scipy
+scikit-learn
+tqdm
+huggingface_hub
+opencv-python
+mediapipe
+torch
+matplotlib
+accelerate
+nbformat
+pyarrow
